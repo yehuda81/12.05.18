@@ -4,31 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ConsoleApp6
 {
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			int[] a = { 2, 3, 5 };
+			int[] arr = fnc1();
+			int[] arr2 = fnc1();
+			NewMethod(arr);
 
-			NewMethod(a);
 		}
 
-		private static double[] NewMethod(int[] array)
+		private static void NewMethod(int[] arr)
 		{
-			double[] myArray = new double[array.Length];
-
-			for(int i = 0; i < array.Length; i++)
+			for (int i = 0; i < arr.Length; i++)
 			{
-				myArray[i] = array[i];
+				Console.WriteLine(arr[i]);
 			}
-			return myArray;
+		}
 
+		private static int[] fnc1()
+		{
+			Random rdd = new Random();
 
-
+			int[] mar = new int[10];
+			for (int i = 0; i < mar.Length; i++)
+			{
+				mar[i] = rdd.Next(1, 1000);
+		
+			}
+			return (mar);
 			
 
 		}
+		
+		
 	}
 }
